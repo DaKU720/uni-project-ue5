@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt w budowie</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* RESET */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* Próbuje użyć Proxima Nova, jeśli nie ma - ładuje Montserrat */
+            font-family: 'Proxima Nova', 'Montserrat', sans-serif;
+            background-color: #000000; /* Głęboka czerń tła (desktop) */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #ededed;
+        }
+
+        /* GŁÓWNY KONTENER - WIDOK MOBILNY */
+        .mobile-wrapper {
+            width: 100%;
+            max-width: 420px;
+            background-color: #111111; /* Ciemny grafit, prawie czarny */
+            min-height: 100vh;
+            padding: 40px 30px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            /* Subtelny border zamiast cienia - bardziej techniczny/industrialny styl */
+            border-left: 1px solid #222;
+            border-right: 1px solid #222;
+        }
+
+        /* Responsywność dla PC */
+        @media (min-width: 450px) {
+            .mobile-wrapper {
+                min-height: auto;
+                height: 85vh;
+                /* Lekkie zaokrąglenie, ale zachowujące surowy styl */
+                border-radius: 4px;
+                border: 1px solid #27272a; /* Wyraźne obramowanie karty */
+                box-shadow: 0 0 50px rgba(0,0,0,0.8); /* Mocny, ciemny cień pod spodem */
+            }
+        }
+
+        /* STYLIZACJA ELEMENTÓW */
+        .status-badge {
+            background-color: transparent;
+            color: #71717a; /* Ciemnoszary tekst */
+            padding: 6px 14px;
+            border-radius: 4px; /* Ostre rogi */
+            border: 1px solid #3f3f46; /* Ciemny border */
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .logo-placeholder {
+            width: 90px;
+            height: 90px;
+            background-color: #1c1c1c;
+            border: 1px solid #333;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        /* Jeśli użyjesz logo obrazkowego */
+        .logo-img {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800; /* Bardzo gruby font w stylu 11bit */
+            line-height: 1.1;
+            margin-bottom: 12px;
+            letter-spacing: -0.03em;
+            color: #ffffff;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #a1a1aa; /* Zgaszony szary dla tekstu */
+            font-weight: 400;
+            max-width: 280px;
+        }
+
+        /* Dekoracyjna linia - minimalistyczna */
+        .line {
+            width: 100%;
+            max-width: 60px;
+            height: 2px;
+            background-color: #3f3f46;
+            margin: 24px auto;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding-top: 40px;
+            font-size: 0.7rem;
+            color: #52525b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Dodatkowy akcent w stylu "loading" */
+        .blinker {
+            animation: blinker 1.5s linear infinite;
+            color: #d4d4d8;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="mobile-wrapper">
+    <div class="status-badge">Under Construction</div>
+
+    <div class="logo-placeholder">P</div>
+    <h1>Soon™<br>2026</h1>
+
+    <div class="line"></div>
+
+    <p>
+        Przygotowujemy nową jakość. <br>
+        Strona dostępna wkrótce.<span class="blinker">_</span>
+    </p>
+
+    <div class="footer">
+        &copy; 2026 Soon™
+    </div>
+</div>
+
+</body>
+</html>
