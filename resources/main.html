@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,8 @@
         body {
             /* Próbuje użyć Proxima Nova, jeśli nie ma - ładuje Montserrat */
             font-family: 'Proxima Nova', 'Montserrat', sans-serif;
-            background-color: #000000; /* Głęboka czerń tła (desktop) */
+            background-color: #000000;
+            /* Głęboka czerń tła (desktop) */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -32,7 +34,8 @@
         .mobile-wrapper {
             width: 100%;
             max-width: 420px;
-            background-color: #111111; /* Ciemny grafit, prawie czarny */
+            background-color: #111111;
+            /* Ciemny grafit, prawie czarny */
             min-height: 100vh;
             padding: 40px 30px;
             position: relative;
@@ -54,18 +57,23 @@
                 height: 85vh;
                 /* Lekkie zaokrąglenie, ale zachowujące surowy styl */
                 border-radius: 4px;
-                border: 1px solid #27272a; /* Wyraźne obramowanie karty */
-                box-shadow: 0 0 50px rgba(0,0,0,0.8); /* Mocny, ciemny cień pod spodem */
+                border: 1px solid #27272a;
+                /* Wyraźne obramowanie karty */
+                box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+                /* Mocny, ciemny cień pod spodem */
             }
         }
 
         /* STYLIZACJA ELEMENTÓW */
         .status-badge {
             background-color: transparent;
-            color: #71717a; /* Ciemnoszary tekst */
+            color: #71717a;
+            /* Ciemnoszary tekst */
             padding: 6px 14px;
-            border-radius: 4px; /* Ostre rogi */
-            border: 1px solid #3f3f46; /* Ciemny border */
+            border-radius: 4px;
+            /* Ostre rogi */
+            border: 1px solid #3f3f46;
+            /* Ciemny border */
             font-size: 0.7rem;
             font-weight: 700;
             letter-spacing: 0.1em;
@@ -97,7 +105,8 @@
 
         h1 {
             font-size: 2rem;
-            font-weight: 800; /* Bardzo gruby font w stylu 11bit */
+            font-weight: 800;
+            /* Bardzo gruby font w stylu 11bit */
             line-height: 1.1;
             margin-bottom: 12px;
             letter-spacing: -0.03em;
@@ -107,7 +116,8 @@
         p {
             font-size: 0.95rem;
             line-height: 1.6;
-            color: #a1a1aa; /* Zgaszony szary dla tekstu */
+            color: #a1a1aa;
+            /* Zgaszony szary dla tekstu */
             font-weight: 400;
             max-width: 280px;
         }
@@ -137,30 +147,41 @@
         }
 
         @keyframes blinker {
-            50% { opacity: 0; }
+            50% {
+                opacity: 0;
+            }
         }
-
     </style>
 </head>
+
 <body>
 
-<div class="mobile-wrapper">
-    <div class="status-badge">Under Construction</div>
+    <div class="mobile-wrapper">
+        <div class="status-badge">Under Construction</div>
 
-    <div class="logo-placeholder">P</div>
-    <h1>Soon™<br>2026</h1>
+        <div class="logo-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                id="Unreal-Engine-Logo--Streamline-Logos" width="48" height="48">
+                <desc>Unreal Engine Logo Streamline Icon: https://streamlinehq.com</desc>
+                <path fill="#ffffff" fill-rule="evenodd"
+                    d="M12 23c6.075 0 11 -4.925 11 -11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11Zm-8.442 -9.416c0.718 -2.333 2.53 -6.86 7.27 -8.584v10.23c0.179 0.18 0.645 0.54 1.076 0.54 0.67 0 1.615 -0.54 1.615 -0.54V8.77c0.555 -1.16 3.123 -3.232 4.847 -3.232 -1.044 1.204 -1.532 1.91 -2.154 3.231v6.462c0.718 0.18 2.154 0 3.23 -1.077 -0.87 1.98 -3.23 4.308 -4.307 4.308l-1.616 -1.077L11.904 19c-1.615 0 -4.308 -1.077 -5.385 -2.692h1.616v-6.17c-1.96 -0.268 -2.857 0.973 -4.577 3.446Z"
+                    clip-rule="evenodd" stroke-width="1"></path>
+            </svg>
+        </div>
+        <h1>Unreal Engine 5<br>Project</h1>
 
-    <div class="line"></div>
+        <div class="line"></div>
 
-    <p>
-        Przygotowujemy nową jakość. <br>
-        Strona dostępna wkrótce.<span class="blinker">_</span>
-    </p>
+        <p>
+            Strona w budowie.<br>
+            Nazwa koła naukowego oraz sekcje pojawią się wkrótce.<span class="blinker">_</span>
+        </p>
 
-    <div class="footer">
-        &copy; 2026 Soon™
+        <div class="footer">
+            &copy; 2026 Design
+        </div>
     </div>
-</div>
 
 </body>
+
 </html>
