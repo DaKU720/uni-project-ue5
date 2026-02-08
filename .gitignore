@@ -33,4 +33,5 @@ resources/flags/1x1/*
 resources/flags/4x3/*
 !resources/flags/4x3/jp.svg
 !resources/flags/4x3/pl.svg
-!resources/flags/4x3/gb.svg
+!resources/flags/4x3/gb.svgpackage.json
+package-lock.json
