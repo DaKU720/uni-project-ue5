@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Specific overrides for project page */
+        body {
+            overflow-x: hidden;
+        }
+
         .project-header {
             padding-top: 120px;
             padding-bottom: 4rem;
@@ -64,6 +68,18 @@
         .back-btn:hover {
             border-color: var(--desert-gold);
             transform: translateX(-5px);
+        }
+
+        @media (max-width: 600px) {
+            .back-nav {
+                top: 1rem;
+                left: 1rem;
+            }
+
+            .back-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
         }
 
         .project-details {
@@ -114,8 +130,7 @@
         <div class="gallery-grid-large">
             <!-- Heavy blur for WIP -->
             <div class="gallery-item-large reveal" style="cursor: default;">
-                <img src="images/project_main.png" alt="Work in Progress" loading="lazy"
-                    style="filter: blur(20px); transform: scale(1.1);">
+                <img src="images/project_main.png" alt="Work in Progress" loading="lazy" style="filter: blur(20px);">
             </div>
 
             <!-- Placeholders for future -->
