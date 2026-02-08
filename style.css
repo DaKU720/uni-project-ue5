@@ -406,7 +406,7 @@ nav {
 }
 
 .project-tile:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     border-color: var(--desert-gold);
 }
@@ -490,7 +490,7 @@ nav {
     border: 1px solid rgba(198, 156, 58, 0.3);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
     }
@@ -659,7 +659,7 @@ nav {
 }
 
 .member-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     /* Slightly less movement */
     border-color: var(--desert-gold);
     box-shadow: 0 15px 30px -5px rgba(198, 156, 58, 0.15);
@@ -968,91 +968,89 @@ footer {
 
 .reveal.active {
     opacity: 1;
+    transform: translateY(0);
+}
 
-    .mobile-menu-overlay.open {
-        transform: translateY(0);
+.mobile-menu-overlay.open {
+    transform: translateY(0);
+}
+
+/* Responsive Media Queries */
+/* Tablet / Mobile Menu Breakpoint (1024px) */
+@media (max-width: 1024px) {
+    .nav-right {
+        display: none;
     }
 
-    /* Responsive Media Queries */
-    @media (max-width: 900px) {
-        .nav-right {
-            display: none;
-        }
-
-        .mobile-menu-btn {
-            display: block;
-            margin-left: auto;
-            /* Push to right just in case */
-        }
-
-        /* Strengthened selector to ensure links are hidden if not in nav-right */
-        .nav-links {
-            display: none;
-        }
-
-        .gallery-grid-large {
-            grid-template-columns: 1fr;
-        }
+    .mobile-menu-btn {
+        display: block;
+        margin-left: auto;
     }
 
-    @media (max-width: 768px) {
-        .container {
-            padding: 0 1.5rem;
-        }
+    /* Ensure links are hidden if not in nav-right */
+    .nav-links {
+        display: none;
+    }
+}
 
-        /* Increased Section Spacing for Mobile */
-        .showcase,
-        .gallery-section,
-        .team,
-        .info-section,
-        .faq-section {
-            padding: 6rem 0;
-            /* consistent large padding */
-            gap: 4rem;
-        }
-
-        .section-header {
-            margin-bottom: 3rem;
-        }
-
-        .hero {
-            padding-top: 60px;
-            align-items: center;
-            /* Center vertically on mobile too */
-            text-align: center;
-        }
-
-        .hero-content {
-            margin: 0 auto;
-        }
-
-        .hero-desc {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .title-display {
-            font-size: 3.5rem;
-            /* Explicit smaller size for consistency */
-        }
-
-        .img-wrapper {
-            padding-bottom: 75%;
-            /* Taller images on mobile */
-        }
-
-        .info-grid {
-            gap: 3rem;
-        }
+/* Mobile Layout Breakpoint (768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
     }
 
-    @media (max-width: 480px) {
-        .title-display {
-            font-size: 2.8rem;
-        }
+    .projects-grid,
+    .gallery-grid-large,
+    .team-grid,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
 
-        .logo {
-            font-size: 1.2rem;
-        }
+    /* Increased Section Spacing for Mobile */
+    .showcase,
+    .gallery-section,
+    .team,
+    .info-section,
+    .faq-section {
+        padding: 6rem 0;
+        gap: 4rem;
+    }
+
+    .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .hero {
+        padding-top: 60px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+    }
+
+    .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .title-display {
+        font-size: 3.5rem;
+    }
+
+    .project-img-wrapper {
+        height: 250px;
+    }
+}
+
+/* Small Mobile Breakpoint (480px) */
+@media (max-width: 480px) {
+    .title-display {
+        font-size: 2.8rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
     }
 }
