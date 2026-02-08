@@ -1,192 +1,375 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UE5 - University Project</title>
+    <title>Yūgen Studio | Desert Settlement</title>
 
+    <!-- Meta Tags for Social Media (Open Graph & Twitter) -->
+    <meta name="description"
+        content="An ambitious student startup crafting immersive, high-fidelity environments. Explore our journey in real-time visualization with Unreal Engine 5.">
+    <meta property="og:title" content="Yūgen Studio | Immersive Real-Time Visualization">
+    <meta property="og:description"
+        content="An ambitious student startup crafting immersive, high-fidelity environments. Explore our journey in real-time visualization.">
+    <meta property="og:image" content="images/project_main.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yūgen Studio | Immersive Real-Time Visualization">
+    <meta name="twitter:description"
+        content="An ambitious student startup crafting immersive, high-fidelity environments.">
+    <meta name="twitter:image" content="images/project_main.png">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;600;800&display=swap"
+        rel="stylesheet">
 
-    <!-- Open Graph / Discord & Messenger Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Unreal Engine 5 University Project">
-    <meta property="og:description" content="This Website is under construction.">
-    <meta name="theme-color" content="#ffffff">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        /* RESET */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            /* Próbuje użyć Proxima Nova, jeśli nie ma - ładuje Montserrat */
-            font-family: 'Proxima Nova', 'Montserrat', sans-serif;
-            background-color: #000000;
-            /* Głęboka czerń tła (desktop) */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #ededed;
-        }
-
-        /* GŁÓWNY KONTENER - WIDOK MOBILNY */
-        .mobile-wrapper {
-            width: 100%;
-            max-width: 420px;
-            background-color: #111111;
-            /* Ciemny grafit, prawie czarny */
-            min-height: 100vh;
-            padding: 40px 30px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-
-            /* Subtelny border zamiast cienia - bardziej techniczny/industrialny styl */
-            border-left: 1px solid #222;
-            border-right: 1px solid #222;
-        }
-
-        /* Responsywność dla PC */
-        @media (min-width: 450px) {
-            .mobile-wrapper {
-                min-height: auto;
-                height: 85vh;
-                /* Lekkie zaokrąglenie, ale zachowujące surowy styl */
-                border-radius: 4px;
-                border: 1px solid #27272a;
-                /* Wyraźne obramowanie karty */
-                box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
-                /* Mocny, ciemny cień pod spodem */
-            }
-        }
-
-        /* STYLIZACJA ELEMENTÓW */
-        .status-badge {
-            background-color: transparent;
-            color: #71717a;
-            /* Ciemnoszary tekst */
-            padding: 6px 14px;
-            border-radius: 4px;
-            /* Ostre rogi */
-            border: 1px solid #3f3f46;
-            /* Ciemny border */
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-        }
-
-        .logo-placeholder {
-            width: 90px;
-            height: 90px;
-            background-color: #1c1c1c;
-            border: 1px solid #333;
-            border-radius: 12px;
-            margin-bottom: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-size: 2.5rem;
-            font-weight: 800;
-        }
-
-        /* Jeśli użyjesz logo obrazkowego */
-        .logo-img {
-            max-width: 120px;
-            height: auto;
-            margin-bottom: 24px;
-        }
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            /* Bardzo gruby font w stylu 11bit */
-            line-height: 1.1;
-            margin-bottom: 12px;
-            letter-spacing: -0.03em;
-            color: #ffffff;
-        }
-
-        p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #a1a1aa;
-            /* Zgaszony szary dla tekstu */
-            font-weight: 400;
-            max-width: 280px;
-        }
-
-        /* Dekoracyjna linia - minimalistyczna */
-        .line {
-            width: 100%;
-            max-width: 60px;
-            height: 2px;
-            background-color: #3f3f46;
-            margin: 24px auto;
-        }
-
-        .footer {
-            margin-top: auto;
-            padding-top: 40px;
-            font-size: 0.7rem;
-            color: #52525b;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Dodatkowy akcent w stylu "loading" */
-        .blinker {
-            animation: blinker 1.5s linear infinite;
-            color: #d4d4d8;
-        }
-
-        @keyframes blinker {
-            50% {
-                opacity: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="flag-icons.min.css">
 </head>
 
 <body>
 
-    <div class="mobile-wrapper">
-        <div class="status-badge">Under Construction</div>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="color: inherit; text-decoration: none;">YŪGEN<span
+                        style="color: var(--desert-gold)">.</span></a>
+            </div>
 
-        <div class="logo-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                id="Unreal-Engine-Logo--Streamline-Logos" width="48" height="48">
-                <desc>Unreal Engine Logo Streamline Icon: https://streamlinehq.com</desc>
-                <path fill="#ffffff" fill-rule="evenodd"
-                    d="M12 23c6.075 0 11 -4.925 11 -11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11Zm-8.442 -9.416c0.718 -2.333 2.53 -6.86 7.27 -8.584v10.23c0.179 0.18 0.645 0.54 1.076 0.54 0.67 0 1.615 -0.54 1.615 -0.54V8.77c0.555 -1.16 3.123 -3.232 4.847 -3.232 -1.044 1.204 -1.532 1.91 -2.154 3.231v6.462c0.718 0.18 2.154 0 3.23 -1.077 -0.87 1.98 -3.23 4.308 -4.307 4.308l-1.616 -1.077L11.904 19c-1.615 0 -4.308 -1.077 -5.385 -2.692h1.616v-6.17c-1.96 -0.268 -2.857 0.973 -4.577 3.446Z"
-                    clip-rule="evenodd" stroke-width="1"></path>
-            </svg>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Right Side Navigation -->
+            <div class="nav-right mobile-hidden" style="display: flex; align-items: center; gap: 3rem;">
+                <div class="nav-links">
+                    <a href="#offer" data-i18n="nav_offer">OUR OFFER</a>
+                    <a href="#careers" data-i18n="nav_careers">CAREERS</a>
+                    <a href="mailto:davidkamys@yahoo.com" class="contact-btn" data-i18n="nav_contact">CONTACT</a>
+                </div>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en"><span class="fi fi-gb"></span></button>
+                    <button class="lang-btn" data-lang="pl"><span class="fi fi-pl"></span></button>
+                    <button class="lang-btn" data-lang="jp"><span class="fi fi-jp"></span></button>
+                </div>
+            </div>
         </div>
-        <h1>Unreal Engine 5<br>University Project</h1>
+    </nav>
 
-        <div class="line"></div>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <button class="close-menu-btn">&times;</button>
+        <a href="#offer" class="mobile-link" data-i18n="nav_offer">Our Offer</a>
+        <a href="#careers" class="mobile-link" data-i18n="nav_careers">Careers</a>
+        <a href="mailto:davidkamys@yahoo.com" class="mobile-link contact" data-i18n="nav_contact">Contact</a>
 
-        <p>
-            This Website in under construction.<span class="blinker">_</span>
-        </p>
-
-        <div class="footer">
-            &copy; 2026 Soon
+        <!-- Mobile Language Switcher -->
+        <div class="mobile-lang-switcher">
+            <button class="lang-btn active" data-lang="en"><span class="fi fi-gb"></span></button>
+            <button class="lang-btn" data-lang="pl"><span class="fi fi-pl"></span></button>
+            <button class="lang-btn" data-lang="jp"><span class="fi fi-jp"></span></button>
         </div>
     </div>
 
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg">
+            <img src="images/project_main.png" alt="Desert Settlement Background" class="hero-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content reveal">
+                <span class="eyebrow fade-in-up delay-1">Unreal Engine 5</span>
+                <h1 class="title-display fade-in-up delay-2" data-i18n="hero_title">Yūgen Studio</h1>
+                <h2 class="subtitle fade-in-up delay-3" data-i18n="hero_subtitle">Desert Settlement Visualization</h2>
+                <p class="hero-desc fade-in-up delay-4" data-i18n="hero_desc">
+                    An ambitious student startup crafting immersive, high-fidelity environments. Explore our journey in
+                    real-time visualization.
+                </p>
+                <!-- Scroll Indicator -->
+                <div class="scroll-indicator fade-in-up delay-5">
+                    <i class="fa-solid fa-arrow-down-long" style="animation: bounce 2s infinite"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section class="showcase container" id="projects">
+        <div class="section-header reveal center-text">
+            <span class="eyebrow" style="color: var(--desert-gold)">Portfolio</span>
+            <h3 class="gradient-text" data-i18n="project_title_main">Projects</h3>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project Tile 1 -->
+            <a href="project-desert.html" class="project-tile reveal">
+                <div class="project-img-wrapper">
+                    <img src="images/project_main.png" alt="Desert Settlement" loading="lazy">
+                    <div class="project-overlay">
+                        <span class="view-btn">View Project</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h4>Desert Settlement Visualization</h4>
+                    <p>Unreal Engine 5 • Real-time Environment</p>
+                    <span class="status-tag">Work in Progress</span>
+                </div>
+            </a>
+
+            <!-- Future Project Tile Placeholder (Hidden or ghosted) -->
+            <!-- 
+            <div class="project-tile reveal" style="opacity: 0.3; pointer-events: none;">
+                ...
+            </div>
+            -->
+        </div>
+    </section>
+
+    <!-- Detailed Gallery (Lightbox) -->
+    <section class="gallery-section container" id="gallery">
+        <div class="section-header reveal center-text">
+            <span class="eyebrow" style="color: var(--desert-gold)">Immersive</span>
+            <h3 class="gradient-text" data-i18n="nav_gallery">Gallery</h3>
+        </div>
+
+        <div class="gallery-grid-large">
+            <div class="gallery-item-large reveal" style="cursor: default;">
+                <img src="images/project_main.png" alt="Concept Art" loading="lazy">
+            </div>
+            <div class="gallery-item-large reveal" style="cursor: default;">
+                <img src="images/project_street.png" alt="Environment Art" loading="lazy">
+            </div>
+            <div class="gallery-item-large reveal" style="cursor: default;">
+                <img src="images/project_interior.png" alt="Interior Design" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Founders Section -->
+    <section class="team container">
+        <div class="section-header reveal center-text">
+            <span class="eyebrow" style="color: var(--desert-gold)">Team</span>
+            <h3 class="gradient-text" data-i18n="team_title">The Founders</h3>
+        </div>
+
+        <div class="team-grid">
+            <!-- Dawid K. -->
+            <div class="member-card reveal">
+                <div class="avatar-wrapper">
+                    <img src="https://i.postimg.cc/6q97PmN3/dawid-pro.png" alt="Dawid K." class="avatar-img">
+                    <div class="avatar-glow"></div>
+                </div>
+                <h4>Dawid K.</h4>
+                <p class="role" data-i18n="role_dawid">Founder & CEO</p>
+                <p class="subrole" data-i18n="subrole_dawid">Vision, Product & Real-Time 3D Lead (Unreal Engine)</p>
+                <div class="bio" data-i18n="bio_dawid">
+                    Startup initiator and co-creator of visualization projects. Responsible for product vision, company
+                    direction, and Unreal Engine work on scene building and real-time 3D solutions.
+                </div>
+                <a href="https://www.linkedin.com/in/dawid-kamys-b294732b2/" target="_blank" class="social-btn"><i
+                        class="fa-brands fa-linkedin"></i></a>
+            </div>
+
+            <!-- Karol S. -->
+            <div class="member-card reveal delay-1">
+                <div class="avatar-wrapper">
+                    <img src="images/founder_3.png" alt="Karol S." class="avatar-img">
+                    <div class="avatar-glow"></div>
+                </div>
+                <h4>Karol S.</h4>
+                <p class="role" data-i18n="role_karol">Co-Founder & Creative Lead</p>
+                <p class="subrole" data-i18n="subrole_karol">3D Assets & Visual Direction (Unreal Engine)</p>
+                <div class="bio" data-i18n="bio_karol">
+                    Co-founder responsible for creating 3D assets and visualization aesthetics. Works in Unreal Engine
+                    on quality, style, and visual consistency of projects.
+                </div>
+                <a href="#" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+
+            <!-- Mikołaj R. -->
+            <div class="member-card reveal delay-2">
+                <div class="avatar-wrapper">
+                    <img src="images/founder_3.png" alt="Mikołaj R." class="avatar-img">
+                    <div class="avatar-glow"></div>
+                </div>
+                <h4>Mikołaj R.</h4>
+                <p class="role" data-i18n="role_mikolaj">Co-Founder & Technical Visual Designer</p>
+                <p class="subrole" data-i18n="subrole_mikolaj">Scene Building & Real-Time 3D (Unreal Engine)</p>
+                <div class="bio" data-i18n="bio_mikolaj">
+                    Co-founder dealing with scene building, environment layout, and the technical side of real-time
+                    visualization in Unreal Engine.
+                </div>
+                <a href="#" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section: Offer & Careers -->
+    <section class="info-section container reveal">
+        <div class="info-grid">
+            <div class="offer" id="offer">
+                <i class="fa-solid fa-cube icon-large"></i>
+                <h3 class="section-title" data-i18n="offer_title">Our Offer</h3>
+                <p class="section-text" data-i18n="offer_desc">
+                    We are currently focused on educational projects, pushing the boundaries of real-time rendering and
+                    interactive storytelling.
+                </p>
+            </div>
+
+            <div class="careers" id="careers">
+                <i class="fa-solid fa-people-group icon-large accent"></i>
+                <h3 class="section-title" data-i18n="careers_title">Careers</h3>
+                <p class="section-text" style="margin-bottom: 1.5rem;" data-i18n="careers_desc">
+                    We are not currently hiring, but we are always open to collaboration.
+                </p>
+                <a href="mailto:davidkamys@yahoo.com" class="button-primary"
+                    style="text-decoration: none; color: white; display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--glass-border); padding: 0.8rem 1.5rem; border-radius: 30px; transition: all 0.3s;">
+                    <i class="fa-regular fa-envelope"></i> <span data-i18n="email_cta">Email Us</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section container reveal" id="faq">
+        <div class="section-header center-text">
+            <span class="eyebrow" style="color: var(--desert-gold)">FAQ</span>
+            <h3 class="gradient-text" data-i18n="faq_title">Frequently Asked Questions</h3>
+        </div>
+
+        <div class="faq-grid">
+            <!-- Q9: Identity -->
+            <details class="faq-item">
+                <summary class="faq-question" data-i18n="faq_q9">Are you a registered company?</summary>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a9">No, currently we are a startup founded by three university students working
+                        towards turning this initiative into a full-fledged company.</p>
+                </div>
+            </details>
+
+            <!-- Q3: Experience Level -->
+            <details class="faq-item">
+                <summary class="faq-question" data-i18n="faq_q3">Are you beginners?</summary>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a3">Yes, we are a student startup constantly learning and evolving.</p>
+                </div>
+            </details>
+
+            <!-- Q1: Commercial Intent -->
+            <details class="faq-item">
+                <summary class="faq-question" data-i18n="faq_q1">Do you take commercial projects?</summary>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a1">Not specifically. We are currently an educational project focusing on skill
+                        development. If we reach a level suitable for top-tier services, we will announce it.</p>
+                </div>
+            </details>
+
+            <!-- Q2: Open Source -->
+            <details class="faq-item">
+                <summary class="faq-question" data-i18n="faq_q2">Are your educational projects open source?</summary>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a2">Most likely, yes. We are currently in the process of building our portfolio
+                        and will share selected resources.</p>
+                </div>
+            </details>
+
+            <!-- Q6: Scope (Games vs Vis) -->
+            <details class="faq-item">
+                <summary class="faq-question" data-i18n="faq_q6">Do you create games in Unreal Engine?</summary>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a6">No, our primary focus is on high-fidelity visualization, not game development
+                        mechanics.</p>
+                </div>
+            </details>
+
+            <!-- Q8: Operation Mode -->
+            <details class="faq-item">
+                <summary class="faq-question" data-i18n="faq_q8">Can we meet in person?</summary>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a8">No, our startup operates fully remotely. All work and team meetings take place
+                        online.</p>
+                </div>
+            </details>
+
+            <!-- Q7: Language -->
+            <details class="faq-item">
+                <summary class="faq-question" data-i18n="faq_q7">What languages do you speak?</summary>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a7">We speak English and Polish fluently.</p>
+                </div>
+            </details>
+
+            <!-- Q5: Recruitment -->
+            <details class="faq-item">
+                <summary class="faq-question" data-i18n="faq_q5">Can I join your team?</summary>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a5">We are not openly recruiting at the moment, but as our projects scale, we
+                        might be looking. Feel free to send us a message regardless.</p>
+                </div>
+            </details>
+
+            <!-- Q4: Contact -->
+            <details class="faq-item">
+                <summary class="faq-question" data-i18n="faq_q4">Can I contact you directly?</summary>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a4">Yes, absolutely. You can reach us at <a href="mailto:davidkamys@yahoo.com"
+                            style="color: var(--desert-gold);">davidkamys@yahoo.com</a>.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p data-i18n="footer_rights">© 2026 Yūgen Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <style>
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .button-primary:hover {
+            background: var(--glass-bg);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+    </style>
 </body>
 
 </html>

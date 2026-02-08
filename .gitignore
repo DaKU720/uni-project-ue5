@@ -20,6 +20,17 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
-
 # Mac OS
 .DS_Store
+node_modules/
+
+# Ignore unused flags to save space
+resources/flags/1x1/*
+!resources/flags/1x1/jp.svg
+!resources/flags/1x1/pl.svg
+!resources/flags/1x1/gb.svg
+
+resources/flags/4x3/*
+!resources/flags/4x3/jp.svg
+!resources/flags/4x3/pl.svg
+!resources/flags/4x3/gb.svg

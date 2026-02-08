@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desert Settlement | Yūgen Studio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;600;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific overrides for project page */
+        .project-header {
+            padding-top: 120px;
+            padding-bottom: 4rem;
+            text-align: center;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: rgba(198, 156, 58, 0.2);
+            color: var(--desert-gold);
+            border: 1px solid var(--desert-gold);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .back-nav {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            border-color: var(--desert-gold);
+            transform: translateX(-5px);
+        }
+
+        .project-details {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            color: #ccc;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Back Navigation -->
+    <nav class="back-nav">
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+    </nav>
+
+    <!-- Project Header -->
+    <header class="project-header container">
+        <div class="reveal">
+            <span class="status-badge"><i class="fa-solid fa-code"></i> Work in Progress</span>
+            <h1 class="gradient-text" style="font-size: clamp(2.5rem, 5vw, 4rem); display: block; margin-bottom: 1rem;">
+                Desert Settlement</h1>
+            <h2 class="subtitle">Unreal Engine 5 Visualization</h2>
+        </div>
+
+        <div class="project-details reveal delay-1">
+            <p>
+                This is our first visualization project, currently under active development.
+                We are crafting a deserted town set in the Wild West, featuring our own custom 3D assets.
+                The final showcase will include high-fidelity scene renders and a short cinematic clip produced entirely
+                in Unreal Engine 5.
+            </p>
+            <p style="margin-top: 1rem; font-style: italic; color: var(--text-muted);">
+                Please note that this project is not yet finished. We are working hard to bring this environment to
+                life.
+            </p>
+        </div>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="container" style="padding-bottom: 6rem;">
+        <div class="gallery-grid-large">
+            <!-- Heavy blur for WIP -->
+            <div class="gallery-item-large reveal" style="cursor: default;">
+                <img src="images/project_main.png" alt="Work in Progress" loading="lazy"
+                    style="filter: blur(20px); transform: scale(1.1);">
+            </div>
+
+            <!-- Placeholders for future -->
+            <div class="gallery-item-large reveal"
+                style="background: #111; display: flex; align-items: center; justify-content: center; border: 1px dashed #333;">
+                <span style="color: #444;">More visuals coming soon...</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal (Reused) -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Script -->
+    <script>
+        // Minimal script for this page
+        window.openLightbox = function (src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            if (lightbox && img) {
+                lightbox.style.display = 'block';
+                img.src = src;
+                document.body.style.overflow = 'hidden';
+            }
+        };
+
+        window.closeLightbox = function () {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox) {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        };
+
+        // Reveal animation
+        function revealOnScroll() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        // Trigger once on load
+        revealOnScroll();
+    </script>
+</body>
+
+</html>
