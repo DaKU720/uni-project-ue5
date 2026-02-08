@@ -309,7 +309,7 @@ nav {
     filter: brightness(0.6) contrast(1.1) blur(10px);
     transform: scale(1.1);
     will-change: transform;
-    animation: breathe 30s ease-in-out infinite;
+    animation: breathe 20s ease-in-out infinite;
 }
 
 .hero-overlay {
