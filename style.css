@@ -736,13 +736,12 @@ nav {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 38px;
-    /* Reduced from 44px */
-    height: 38px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     transition: all 0.3s;
     border: 1px solid transparent;
 }
@@ -1041,6 +1040,12 @@ footer {
 
     .project-img-wrapper {
         height: 250px;
+    }
+
+    .social-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
     }
 }
 
