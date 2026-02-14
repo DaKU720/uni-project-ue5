@@ -3,7 +3,7 @@ const translations = {
         nav_offer: "Our Offer",
         nav_careers: "Careers",
         nav_gallery: "Gallery",
-        nav_contact: "Contact",
+        nav_contact: "SOON™",
         hero_title: "Yūgen Real-Time",
         hero_subtitle: "Unreal Engine 5: Desert Settlement Visualization",
         hero_desc: "An ambitious student startup crafting immersive, high-fidelity environments. Explore our journey in real-time visualization.",
@@ -31,7 +31,7 @@ const translations = {
         offer_desc: "We are currently focused on educational projects, pushing the boundaries of real-time rendering and interactive storytelling.",
         careers_title: "Join Us",
         careers_desc: "We are not currently hiring, but we are always open to collaboration. If you share our passion for 3D art and design, reach out.",
-        email_cta: "Email Us",
+        email_cta: "SOON™",
         footer_rights: "© 2026 Yūgen Real-Time. All rights reserved.",
 
         // FAQ EN
@@ -53,13 +53,13 @@ const translations = {
         faq_q5: "Can I join your team?",
         faq_a5: "We are not openly recruiting at the moment, but as our projects scale, we might be looking. Feel free to send us a message regardless.",
         faq_q4: "Can I contact you directly?",
-        faq_a4: "Yes, absolutely. You can reach us at <a href='mailto:davidkamys@yahoo.com' style='color: var(--desert-gold);'>davidkamys@yahoo.com</a>."
+        faq_a4: "Yes, absolutely. You can reach us at <span style='color: var(--desert-gold);'>SOON™</span>."
     },
     pl: {
         nav_offer: "Oferta",
         nav_careers: "Kariera",
         nav_gallery: "Galeria",
-        nav_contact: "Kontakt",
+        nav_contact: "SOON™",
         hero_title: "Yūgen Real-Time",
         hero_subtitle: "Unreal Engine 5: Pustynna Osada",
         hero_desc: "Ambitny studencki startup tworzący immersyjne środowiska high-fidelity. Poznaj naszą podróż w świecie wizualizacji czasu rzeczywistego.",
@@ -87,7 +87,7 @@ const translations = {
         offer_desc: "Skupiamy się na projektach edukacyjnych, badając granice renderingu czasu rzeczywistego i interaktywnej narracji.",
         careers_title: "Dołącz do nas",
         careers_desc: "Obecnie nie prowadzimy rekrutacji, ale zawsze jesteśmy otwarci na ciekawe współprace. Jeśli pasjonujesz się grafiką 3D – napisz do nas.",
-        email_cta: "Napisz do nas",
+        email_cta: "SOON™",
         footer_rights: "© 2026 Yūgen Real-Time. Wszelkie prawa zastrzeżone.",
 
         // FAQ PL
@@ -109,13 +109,13 @@ const translations = {
         faq_q5: "Czy mogę dołączyć do zespołu?",
         faq_a5: "Nie prowadzimy aktywnej rekrutacji, ale wraz ze skalą projektów to może się zmienić. Więc śmiało odezwij się.",
         faq_q4: "Czy można się z wami skontaktować bezpośrednio?",
-        faq_a4: "Jasne. Napisz bezpośrednio na <a href='mailto:davidkamys@yahoo.com' style='color: var(--desert-gold);'>davidkamys@yahoo.com</a>."
+        faq_a4: "Jasne. Napisz bezpośrednio na <span style='color: var(--desert-gold);'>SOON™</span>."
     },
     jp: {
         nav_offer: "サービス",
         nav_careers: "採用情報",
         nav_gallery: "ギャラリー",
-        nav_contact: "コンタクト",
+        nav_contact: "SOON™",
         hero_title: "Yūgen Real-Time",
         hero_subtitle: "Unreal Engine 5: 砂漠の集落",
         hero_desc: "没入感のある高精細な環境を作り出す、野心的な学生スタートアップ。リアルタイムビジュアライゼーションへの挑戦をご覧ください。",
@@ -143,7 +143,7 @@ const translations = {
         offer_desc: "現在は教育プロジェクトに注力し、リアルタイムレンダリングとインタラクティブなストーリーテリングの可能性を探求しています。",
         careers_title: "採用について",
         careers_desc: "現在、積極的な採用は行っていませんが、コラボレーションは歓迎です。3Dアートとデザインに情熱をお持ちの方はご連絡ください。",
-        email_cta: "メールを送る",
+        email_cta: "SOON™",
         footer_rights: "© 2026 Yūgen Real-Time. All rights reserved.",
 
         // FAQ JP
@@ -165,7 +165,7 @@ const translations = {
         faq_q5: "チームに参加できますか？",
         faq_a5: "現在は公募していませんが、プロジェクトの拡大に伴い募集する可能性があります。ご連絡はいつでも歓迎です。",
         faq_q4: "直接連絡をとることは可能ですか？",
-        faq_a4: "もちろんです。<a href='mailto:davidkamys@yahoo.com' style='color: var(--desert-gold);'>davidkamys@yahoo.com</a> まで直接メールをください。"
+        faq_a4: "もちろんです。<span style='color: var(--desert-gold);'>SOON™</span> まで直接メールをください。"
     }
 };
 
